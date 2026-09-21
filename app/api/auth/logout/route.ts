@@ -1,0 +1,1 @@
+import {clearSession} from "@/lib/server";export async function POST(){await clearSession();return Response.redirect(new URL("/",process.env.NEXT_PUBLIC_SITE_URL||"http://localhost:3000"))}
