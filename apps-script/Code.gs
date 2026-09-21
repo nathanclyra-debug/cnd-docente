@@ -67,6 +67,8 @@ function setupAdmin(name, pin) {
   return {ok:true};
 }
 
+function appUrl() { return ScriptApp.getService().getUrl(); }
+
 function apiStatus() {
   var p = PropertiesService.getScriptProperties();
   return {configured:!!p.getProperty('DB_ID'), adminConfigured:!!p.getProperty('ADMIN_HASH')};
