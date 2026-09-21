@@ -1,0 +1,1 @@
+export const json=(data:unknown,status=200)=>Response.json(data,{status});export const fail=(message:string,status=400)=>json({error:message},status);
