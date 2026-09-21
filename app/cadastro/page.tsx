@@ -50,8 +50,8 @@ export default function Cadastro() {
 
       router.push("/documentos");
       router.refresh();
-    } catch {
-      setErr("Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.");
+    } catch (error) {
+      setErr(error instanceof DOMException && error.name === "AbortError" ? "O servidor demorou mais de 15 segundos para responder. Verifique a conexão com o Supabase no Netlify." : "Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.");
     } finally {
       setLoading(false);
     }
